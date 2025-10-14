@@ -1,0 +1,22 @@
+{
+  "name": "klinik-subha-website",
+  "version": "1.0.0",
+  "description": "Klinik Subha medical clinic website with responsive design and mobile navigation",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 3000",
+    "start": "python -m http.server 3000",
+    "build": "echo 'Static site - no build required'"
+  },
+  "keywords": [
+    "medical",
+    "clinic",
+    "healthcare",
+    "responsive",
+    "website"
+  ],
+  "author": "Klinik Subha",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
