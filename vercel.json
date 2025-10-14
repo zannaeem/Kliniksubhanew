@@ -4,12 +4,6 @@
   "devCommand": "python -m http.server 3000",
   "installCommand": "echo 'No dependencies to install'",
   "framework": null,
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
   "headers": [
     {
       "source": "/video/(.*)",
