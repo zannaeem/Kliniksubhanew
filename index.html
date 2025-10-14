@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Klinik Subha</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Preload Carousel Images -->
+    <link rel="preload" href="img/services/services/service1.jpg" as="image">
+    <link rel="preload" href="img/services/services/service2.jpg" as="image">
+    <link rel="preload" href="img/services/services/service3.jpg" as="image">
+    <link rel="preload" href="img/services/services/service4.jpg" as="image">
+
+    <style>
+        :root {
+            --primary: #2CC295;    /* Mountain Meadow - lighter green */
+            --primary-light: #00DF81;  /* Caribbean Green - even lighter */
+            --primary-dark: #03624C;   /* Bangladesh Green - darker shade */
+        }
+
+        .bg-primary {
+            background-color: var(--primary) !important;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
+        .text-primary {
+            color: var(--primary) !important;
+        }
+
+        .border-primary {
+            border-color: var(--primary) !important;
+        }
+
+        .video-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--primary);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-play span {
+            border-left: 15px solid white;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            margin-left: 5px;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 65px;
+            height: 65px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-float::after {
+            content: "Chat with us now!";
+            position: absolute;
+            right: 80px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .whatsapp-float::before {
+            content: "";
+            position: absolute;
+            right: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 8px solid transparent;
+            border-left-color: white;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.05));
+        }
+
+        .whatsapp-float:hover::after,
+        .whatsapp-float:hover::before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .whatsapp-float:hover::after {
+            transform: translateY(-50%) translateX(-10px);
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            color: #FFF;
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp-float .pulse {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #25d366;
+            opacity: 0.7;
+            animation: pulse 2s infinite;
+            z-index: -1;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            70% {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 30px;
+            }
+
+            .whatsapp-float::after {
+                right: 70px;
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+
+            .whatsapp-float::before {
+                right: 60px;
+            }
+        }
+
+        /* Custom cursor styles */
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #1C6839;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.2s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .custom-cursor-dot {
+            width: 6px;
+            height: 6px;
+            background: #1C6839;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Hide cursor on interactive elements */
+        a, button, input, textarea {
+            cursor: none;
+        }
+
+        /* Service Carousel Styles */
+        .service-carousel .owl-stage-outer {
+            padding: 20px 0;
+        }
+
+        .service-carousel .owl-stage {
+            display: flex;
+        }
+
+        .service-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .service-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(44, 194, 149, 0.9), transparent);
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover .service-overlay {
+            background: linear-gradient(to top, rgba(44, 194, 149, 1), rgba(44, 194, 149, 0.8));
+        }
+
+        #service-prev, #service-next {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        #service-prev:hover, #service-next:hover {
+            background: var(--primary-dark);
+            transform: scale(1.1);
+        }
+
+        /* Mobile-specific service carousel styles */
+        @media (max-width: 575px) {
+            .service-carousel .owl-stage-outer {
+                padding: 0;
+                overflow: hidden;
+            }
+            
+            .service-carousel .owl-stage {
+                margin-left: 0 !important;
+            }
+            
+            .service-item {
+                width: 100% !important;
+                margin: 0 !important;
+            }
+            
+            .service-item img {
+                height: 250px;
+            }
+            
+            .service-overlay {
+                padding: 15px;
+            }
+            
+            .service-overlay h4 {
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .service-overlay p {
+                font-size: 0.9rem;
+                margin-bottom: 0;
+            }
+            
+            #service-prev, #service-next {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Mobile-only hero button styles - won't affect desktop */
+        @media (max-width: 575px) {
+            .hero-buttons-container {
+                justify-content: center !important;
+                align-items: center !important;
+                width: 100%;
+            }
+            
+            .hero-buttons-container .btn {
+                min-width: 80px !important;
+                max-width: 100px !important;
+                margin: 0 auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light p-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-1 me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2" style="font-size: 0.75rem;"></small>
+                    <small style="font-size: 0.75rem;">BEAUFORT SQUARE, 89800 BEAUFORT, SABAH</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center py-1">
+                    <small class="far fa-clock text-primary me-2" style="font-size: 0.75rem;"></small>
+                    <small style="font-size: 0.75rem;"> EVERYDAY : 8.00 AM - 09.00 PM</small>
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end">
+                <div class="h-100 d-inline-flex align-items-center py-1 me-4">
+                    <small class="fa fa-phone-alt text-primary me-2" style="font-size: 0.75rem;"></small>
+                    <small style="font-size: 0.75rem;">+016-2235212</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid header p-0 mb-5" style="background-color: white;">
+        <div class="position-relative">
+            <video autoplay muted loop playsinline class="w-100" style="height: 100vh; object-fit: cover;" id="bgVideo">
+                <source src="video/homepage.mp4" type="video/mp4">
+                <img src="img/carousel-1.jpg" alt="Fallback image" class="w-100" style="height: 100vh; object-fit: cover;">
+            </video>
+            <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.3);">
+                        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg navbar-light p-0 wow fadeIn" data-wow-delay="0.1s" style="position: absolute; top: 20px; right: 20px; z-index: 1000;">
+            <!-- Desktop Navigation -->
+            <div class="navbar-nav d-none d-lg-flex align-items-center gap-3">
+                <a href="index.html" class="nav-item nav-link active text-white" data-translate="nav-home" style="font-size: 0.9rem;">Home</a>
+                <a href="about.html" class="nav-item nav-link text-white" data-translate="nav-about" style="font-size: 0.9rem;">About</a>
+                <a href="service.html" class="nav-item nav-link text-white" data-translate="nav-service" style="font-size: 0.9rem;">Service</a>
+                <a href="#book-section" class="btn" style="min-width: 80px; font-size: 0.9rem; padding: 0.5rem 0.75rem; text-align: center; line-height: 1.2; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: var(--primary); border-color: var(--primary); color: white;">
+                    <div style="font-size: 0.8rem;">BOOK AN</div>
+                    <div style="font-size: 0.8rem;">APPOINTMENT</div>
+                </a>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="d-lg-none">
+                <!-- Mobile Menu Button -->
+                <button class="btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 8px; padding: 8px 12px; min-width: 50px;">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <!-- Mobile Dropdown Menu -->
+                <ul class="dropdown-menu dropdown-menu-end" style="background: rgba(44, 194, 149, 0.95); backdrop-filter: blur(10px); border: none; border-radius: 12px; padding: 15px; min-width: 180px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); margin-top: 10px;">
+                    <li><a class="dropdown-item text-white text-center" href="index.html" style="font-size: 1rem; padding: 10px; border-radius: 8px; transition: all 0.3s ease;">Home</a></li>
+                    <li><a class="dropdown-item text-white text-center" href="about.html" style="font-size: 1rem; padding: 10px; border-radius: 8px; transition: all 0.3s ease;">About</a></li>
+                    <li><a class="dropdown-item text-white text-center" href="service.html" style="font-size: 1rem; padding: 10px; border-radius: 8px; transition: all 0.3s ease;">Service</a></li>
+                    <li><hr class="dropdown-divider" style="border-color: rgba(255, 255, 255, 0.3); margin: 10px 0;"></li>
+                    <li><a class="dropdown-item text-center" href="#book-section" style="background: var(--primary); color: white; font-size: 0.9rem; padding: 12px; border-radius: 8px; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <div style="font-size: 0.8rem;">BOOK AN</div>
+                        <div style="font-size: 0.8rem;">APPOINTMENT</div>
+                    </a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+                 
+                        <!-- Hero Content with Rounded Container -->
+        <div class="container" style="margin-top: 25vh;">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 col-md-11 col-12 col-sm-12">
+                            <div class="text-center" style="text-align: center !important;">
+                                <p class="d-inline-block border rounded-pill text-white py-1 py-md-2 px-2 px-md-4 mb-2 mb-md-4 animated slideInDown" 
+                                   style="font-size: 0.7rem; background-color: #2CC295; border-color: #2CC295 !important; text-align: center;"
+                                   data-translate="hero-welcome">
+                                    WELCOME TO KLINIK SUBHA
+                                </p>
+                                <h1 class="display-3 text-white mb-2 mb-md-4 animated slideInDown" style="font-size: clamp(1.5rem, 4vw, 2.8rem); text-align: center;" data-translate="hero-title">Comprehensive Care. Affordable Excellence.</h1>
+                                <p class="text-white mb-2 mb-md-4 animated slideInDown" style="font-size: 0.7rem; text-align: center;" data-translate="hero-subtitle">Trusted Since 1990</p>
+                                
+                                <p class="text-white mb-2 mb-md-4 animated slideInDown" style="font-size: clamp(0.8rem, 2.5vw, 1rem); max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.5; text-align: center;" data-translate="hero-description">
+                                    Providing affordable, high-quality healthcare services, including general practice, pain management, physiotherapy, and diagnostic screenings. Trusted by families and corporate clients, Klinik Subha offers compassionate, patient-centered care in a modern and welcoming environment.
+                                </p>
+
+                                <div class="d-flex justify-content-center hero-buttons-container">
+                                    <a href="#book-section" class="btn py-2 py-md-3 px-3 px-md-5 animated slideInRight" style="font-size: clamp(0.8rem, 2.5vw, 1.1rem); background-color: #2CC295; border-color: #2CC295; color: white;" data-translate="hero-book-now">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            </div>
+    <!-- Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Left Text Content -->
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                                                        <p class="d-inline-block border rounded-pill py-1 px-4" style="background-color: rgba(44, 194, 149, 0.1); color: var(--primary);">ABOUT KLINIK SUBHA</p>
+                    <h1 class="mb-4">Our Background</h1>
+                    <p>
+                        <strong>Jash Pillay Medresources Sdn Bhd</strong> is a Sabah-based healthcare group, established in 2018 and headquartered in Beaufort. Our mission is to deliver accessible, high-quality, and holistic medical services, especially to underserved and semi-rural communities in Sabah.
+                    </p>
+                    <p>
+                        Klinik Subha focuses on family-centered care, combining medical and physiotherapy services under one roof. We are committed to long-term patient relationships, offering comprehensive healthcare solutions for every stage of life.
+                    </p>
+                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="about.html">READ MORE ABOUT US</a>
+                </div>
+                <!-- Right Video Content -->
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="position-relative rounded overflow-hidden h-100" style="min-height: 400px;">
+                        <div class="position-relative video-container h-100">
+                            <iframe class="position-absolute w-100 h-100" 
+                                    src="https://www.youtube.com/embed/arcxcJ1C7yA?autoplay=0&mute=1&loop=1&playlist=arcxcJ1C7yA" 
+                                    title="Klinik Subha Video" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    allowfullscreen
+                                    style="object-fit: cover;">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Klinik Subha Video</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <!-- 16:9 aspect ratio -->
+                    <div class="ratio ratio-16x9">
+                        <iframe id="modalVideo" src="https://www.youtube.com/embed/arcxcJ1C7yA" 
+                                title="Klinik Subha Video" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Our Services</p>
+                <h1>Comprehensive Healthcare Solutions</h1>
+                <p class="text-muted">Discover our wide range of medical services designed to meet all your healthcare needs</p>
+            </div>
+            
+            <!-- Service Carousel -->
+            <div class="d-flex align-items-center justify-content-center" style="gap: 10px;">
+                <button id="service-prev" class="btn btn-outline-primary"><i class="bi bi-arrow-left"></i></button>
+                <div style="flex: 1 1 0; min-width: 0;">
+                    <div class="owl-carousel service-carousel wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item">
+                            <a href="services/service1.html" class="text-decoration-none">
+                                <img src="img/services/services/service1.jpg" alt="Student Health Screening IPTA IPTS" class="img-fluid rounded">
+                                <div class="service-overlay p-4">
+                                    <h4 class="text-white mb-2">Student Health Screening (IPTA/IPTS)</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="service-item">
+                            <a href="services/service2.html" class="text-decoration-none">
+                                <img src="img/services/services/service2.jpg" alt="Student Health Screening School" class="img-fluid rounded">
+                                <div class="service-overlay p-4">
+                                    <h4 class="text-white mb-2">Student Health Screening (School)</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="service-item">
+                            <a href="services/service3.html" class="text-decoration-none">
+                                <img src="img/services/services/service3.jpg" alt="GDL PSV Health Screening New Application" class="img-fluid rounded">
+                                <div class="service-overlay p-4">
+                                    <h4 class="text-white mb-2">GDL / PSV Health Screening (New Application)</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="service-item">
+                            <a href="services/service4.html" class="text-decoration-none">
+                                <img src="img/services/services/service4.jpg" alt="Full Deluxe Health Screening Men" class="img-fluid rounded">
+                                <div class="service-overlay p-4">
+                                    <h4 class="text-white mb-2">Full Deluxe Health Screening (Men)</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="service-item">
+                            <a href="services/service5.html" class="text-decoration-none">
+                                <img src="img/services/services/service5.jpg" alt="Standard Health Screening Most Popular" class="img-fluid rounded">
+                                <div class="service-overlay p-4">
+                                    <h4 class="text-white mb-2">Standard Health Screening (Most Popular)</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="service-item">
+                            <a href="services/service6.html" class="text-decoration-none">
+                                <img src="img/services/services/service6.jpg" alt="Basic Pre-Employment Health Screening" class="img-fluid rounded">
+                                <div class="service-overlay p-4">
+                                    <h4 class="text-white mb-2">Basic Pre-Employment Health Screening</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="service-item">
+                            <a href="services/service7.html" class="text-decoration-none">
+                                <img src="img/services/services/service7.jpg" alt="Full Deluxe Health Screening Women" class="img-fluid rounded">
+                                <div class="service-overlay p-4">
+                                    <h4 class="text-white mb-2">Full Deluxe Health Screening (Women)</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="service-item">
+                            <a href="services/service8.html" class="text-decoration-none">
+                                <img src="img/services/services/service8.jpg" alt="GDL PSV Health Screening License Renewal" class="img-fluid rounded">
+                                <div class="service-overlay p-4">
+                                    <h4 class="text-white mb-2">GDL / PSV Health Screening (License Renewal)</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="service-item">
+                            <a href="services/service9.html" class="text-decoration-none">
+                                <img src="img/services/services/service9.jpg" alt="Basic Health Screening Most Popular" class="img-fluid rounded">
+                                <div class="service-overlay p-4">
+                                    <h4 class="text-white mb-2">Basic Health Screening (Most Popular)</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="service-item">
+                            <a href="services/service10.html" class="text-decoration-none">
+                                <img src="img/services/services/service10.jpg" alt="Comprehensive Pre-Employment Health Screening" class="img-fluid rounded">
+                                <div class="service-overlay p-4">
+                                    <h4 class="text-white mb-2">Comprehensive Pre-Employment Health Screening</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="service-item">
+                            <a href="services/service11.html" class="text-decoration-none">
+                                <img src="img/services/services/service11.jpg" alt="Gardasil 9 Vaccine HPV Prevention" class="img-fluid rounded">
+                                <div class="service-overlay p-4">
+                                    <h4 class="text-white mb-2">Gardasil 9 Vaccine (HPV Prevention)</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="service-item">
+                            <a href="services/service12.html" class="text-decoration-none">
+                                <img src="img/services/services/service12.jpg" alt="Meningococcal Vaccine Haji Umrah" class="img-fluid rounded">
+                                <div class="service-overlay p-4">
+                                    <h4 class="text-white mb-2">Meningococcal Vaccine (Haji & Umrah)</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="service-item">
+                            <a href="services/service13.html" class="text-decoration-none">
+                                <img src="img/services/services/service13.jpg" alt="Typhoid Vaccine For Food Handlers" class="img-fluid rounded">
+                                <div class="service-overlay p-4">
+                                    <h4 class="text-white mb-2">Typhoid Vaccine (For Food Handlers)</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="service-item">
+                            <a href="services/service14.html" class="text-decoration-none">
+                                <img src="img/services/services/service14.jpg" alt="Influenza Flu Vaccine" class="img-fluid rounded">
+                                <div class="service-overlay p-4">
+                                    <h4 class="text-white mb-2">Influenza (Flu) Vaccine</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="service-item">
+                            <a href="services/service15.html" class="text-decoration-none">
+                                <img src="img/services/services/service15.jpg" alt="Pneumococcal Vaccine Synflorix" class="img-fluid rounded">
+                                <div class="service-overlay p-4">
+                                    <h4 class="text-white mb-2">Pneumococcal Vaccine (Synflorix)</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="service-item">
+                            <a href="services/service16.html" class="text-decoration-none">
+                                <img src="img/services/services/service16.jpg" alt="Rotavirus Vaccine" class="img-fluid rounded">
+                                <div class="service-overlay p-4">
+                                    <h4 class="text-white mb-2">Rotavirus Vaccine</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="service-item">
+                            <a href="services/service17.html" class="text-decoration-none">
+                                <img src="img/services/services/service17.jpg" alt="Implanon Insertion Family Planning" class="img-fluid rounded">
+                                <div class="service-overlay p-4">
+                                    <h4 class="text-white mb-2">Implanon Insertion (Family Planning)</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button id="service-next" class="btn btn-outline-primary"><i class="bi bi-arrow-right"></i></button>
+            </div>
+            
+            <!-- View All Services Button -->
+            <div class="text-center mt-5">
+                <a href="service.html" class="btn btn-primary py-3 px-5">
+                    <i class="fa fa-list me-2"></i>View All Services
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+    <!-- Feature Start -->
+    <div class="container-fluid bg-primary overflow-hidden my-5 px-lg-0">
+        <div class="container feature px-lg-0">
+            <div class="row g-0 mx-lg-0 justify-content-start">
+                <div class="col-lg-8 offset-lg-1 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="p-lg-5 text-center">
+                        <div class="bg-white rounded-5 p-4 p-md-5 shadow-lg" style="border-radius: 25px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);">
+                            <div class="text-center mb-3">
+                                <p class="d-inline-block border rounded-pill py-1 px-3 px-md-4" style="font-size: clamp(0.8rem, 2.5vw, 1.05rem); background-color: #2CC295; border-color: #2CC295 !important; color: white;">Features</p>
+                            </div>
+                            <h1 class="text-dark mb-3 mb-md-4 text-center" style="font-size: clamp(1.8rem, 5vw, 2.8rem);">Why Choose Us</h1>
+                            <p class="text-dark mb-3 mb-md-4 pb-2" style="font-size: clamp(0.9rem, 2.8vw, 1.15rem); line-height: 1.6;">At Klinik Subha, we provide affordable, high-quality, family-centered care delivered by skilled medical officers and physiotherapists. Equipped with advanced diagnostic tools, our clinic ensures precise, efficient care. Conveniently located at Beaufort Square and open daily, we are committed to making healthcare accessible for everyone. Your family's health is our priority.</p>
+                            <div class="row g-3 g-md-4 justify-content-center">
+                                <div class="col-6 col-md-3">
+                                    <div class="d-flex flex-column align-items-center text-center">
+                                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light mb-2 mb-md-3" style="width: clamp(45px, 12vw, 60px); height: clamp(45px, 12vw, 60px);">
+                                            <i class="fa fa-user-md text-primary fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-dark mb-1 mb-md-2" style="font-size: clamp(0.8rem, 2.2vw, 1rem);">Experience</p>
+                                            <h5 class="text-dark mb-0" style="font-size: clamp(0.9rem, 2.5vw, 1.1rem);">Doctors</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="d-flex flex-column align-items-center text-center">
+                                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light mb-2 mb-md-3" style="width: clamp(45px, 12vw, 60px); height: clamp(45px, 12vw, 60px);">
+                                            <i class="fa fa-check text-primary fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-dark mb-1 mb-md-2" style="font-size: clamp(0.8rem, 2.2vw, 1rem);">Quality</p>
+                                            <h5 class="text-dark mb-0" style="font-size: clamp(0.9rem, 2.5vw, 1.1rem);">Services</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="d-flex flex-column align-items-center text-center">
+                                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light mb-2 mb-md-3" style="width: clamp(45px, 12vw, 60px); height: clamp(45px, 12vw, 60px);">
+                                            <i class="fa fa-comment-medical text-primary fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-dark mb-1 mb-md-2" style="font-size: clamp(0.8rem, 2.2vw, 1rem);">Positive</p>
+                                            <h5 class="text-dark mb-0" style="font-size: clamp(0.9rem, 2.5vw, 1.1rem);">Consultation</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="d-flex flex-column align-items-center text-center">
+                                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light mb-2 mb-md-3" style="width: clamp(45px, 12vw, 60px); height: clamp(45px, 12vw, 60px);">
+                                            <i class="fa fa-headphones text-primary fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-dark mb-1 mb-md-2" style="font-size: clamp(0.8rem, 2.2vw, 1rem);">Daily</p>
+                                            <h5 class="text-dark mb-0" style="font-size: clamp(0.9rem, 2.5vw, 1.1rem);">Support</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature End -->
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Testimonial</p>
+                <h1>What Our Patients Say</h1>
+            </div>
+            
+            <!-- Google Reviews Widget -->
+            <div class="row justify-content-center">
+                <div class="col-lg-10 wow fadeInUp" data-wow-delay="0.3s">
+                    <!-- Embedded Google Reviews Widget (Elfsight) -->
+                    <div class="google-reviews-container mb-4" style="min-height: 200px;"> 
+                        <div id="google-reviews">
+                            <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+                            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+                            <div class="elfsight-app-d97b0a54-41c6-4c86-ab01-b8f6c71d9f03" data-elfsight-app-lazy></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Write a Review Button -->
+                    <div class="text-center mt-4">
+                        <a href="https://search.google.com/local/writereview?placeid=ChIJOSum2cXNPDIR7ehuvVzEY2U" target="_blank" class="btn btn-primary py-3 px-5">
+                            <i class="fab fa-google me-2"></i>Write a Google Review
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Doctors</p>
+                <h1>Our Experience Doctors</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/services/services/1.jpg" alt="Dr. Jason Jimmy Lee Pillay">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Dr. Jason Jimmy Lee Pillay (M.D.)</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/services/services/2.jpg" alt="Dr. Sharlinna John">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Dr. Sharlinna John (M.D.)</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/services/services/drnurulnew.png" alt="Dr. Nurul Hidayu Hanuar">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Dr. Siti Nurul Hidayu Hanuar (M.D.)</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Location Map Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Location</p>
+                <h1>Find Us Here</h1>
+                <p class="text-muted">Visit us at our convenient location in Beaufort Square</p>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="position-relative rounded overflow-hidden h-100" style="min-height: 400px;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.5!2d115.7436!3d5.3473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x323a1b8b8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sBeaufort%20Square%2C%20Beaufort%2C%20Sabah!5e0!3m2!1sen!2smy!4v1234567890123!5m2!1sen!2smy" 
+                                width="100%" 
+                                height="400" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="bg-light rounded p-5 h-100">
+                        <h3 class="mb-4">Visit Our Clinic</h3>
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-primary" style="width: 50px; height: 50px;">
+                                <i class="fa fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="mb-1">Address</h5>
+                                <p class="mb-0">Beaufort Square Avenue 2<br>Beaufort Square<br>89800 Beaufort, Sabah</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-primary" style="width: 50px; height: 50px;">
+                                <i class="fa fa-clock text-white"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="mb-1">Operating Hours</h5>
+                                <p class="mb-0">Monday - Sunday<br>8:00 AM - 9:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-primary" style="width: 50px; height: 50px;">
+                                <i class="fa fa-phone-alt text-white"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="mb-1">Phone</h5>
+                                <p class="mb-0">+016-2235212</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <a href="https://maps.google.com/?q=Beaufort+Square+Avenue+2,+Beaufort+Square,+89800+Beaufort,+Sabah" 
+                               target="_blank" 
+                               class="btn btn-primary w-100 py-3">
+                                <i class="fa fa-directions me-2"></i>
+                                Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Location Map End -->
+
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5" id="book-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="d-inline-block border rounded-pill py-1 px-4">Contact</p>
+                    <h1 class="mb-5">Get In Touch With Us</h1>
+                    <div class="text-center mb-5">
+                        <div class="bg-light rounded p-5">
+                            <h3 class="mb-4">Quick Contact via WhatsApp</h3>
+                            <p class="mb-4">For immediate assistance, appointments, or inquiries, chat with us directly on WhatsApp!</p>
+                            <a href="https://wa.me/60162235212?text=Hi%20Klinik%20Subha!%20I%20would%20like%20to%20make%20an%20appointment%20or%20ask%20a%20question." 
+                               class="btn btn-success py-4 px-5" 
+                               target="_blank"
+                               style="background-color: #25d366; border-color: #25d366; font-size: 1.2rem; font-weight: 600;">
+                                <i class="fab fa-whatsapp me-3" style="font-size: 1.5rem;"></i>
+                                Chat on WhatsApp Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-light rounded p-5">
+                        <h3 class="mb-4">Send Us An Email</h3>
+                        <p class="mb-4">For appointments and inquiries, please fill out the form below and we'll get back to you soon.</p>
+                        
+                        <form id="contactForm" class="text-start">
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <label for="contactName" class="form-label">Your Name *</label>
+                                    <input type="text" id="contactName" name="contactName" class="form-control border-0" placeholder="Your Name" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <label for="contactEmail" class="form-label">Your Email *</label>
+                                    <input type="email" id="contactEmail" name="contactEmail" class="form-control border-0" placeholder="Your Email" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="contactPhone" class="form-label">Phone Number</label>
+                                    <input type="tel" id="contactPhone" name="contactPhone" class="form-control border-0" placeholder="Your Phone Number (optional)" style="height: 55px;">
+                                </div>
+                                <div class="col-12">
+                                    <label for="contactSubject" class="form-label">Subject *</label>
+                                    <select id="contactSubject" name="contactSubject" class="form-select border-0" style="height: 55px;" required>
+                                        <option value="" disabled selected>Select Subject</option>
+                                        <option value="Appointment Request">Appointment Request</option>
+                                        <option value="General Inquiry">General Inquiry</option>
+                                        <option value="Service Information">Service Information</option>
+                                        <option value="Feedback">Feedback</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="contactMessage" class="form-label">Message *</label>
+                                    <textarea id="contactMessage" name="contactMessage" class="form-control border-0" rows="4" placeholder="Please describe your inquiry or appointment request..." required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary py-3 px-5 w-100 mb-3">
+                                        <i class="fa fa-paper-plane me-2"></i>
+                                        Send Message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <div class="text-center mt-4">
+                            <p class="text-muted mb-3">Or contact us directly via WhatsApp:</p>
+                            <a href="https://wa.me/60162235212?text=Hi%20Klinik%20Subha!%20I%20would%20like%20to%20make%20an%20appointment." 
+                               class="btn btn-success py-3 px-5" 
+                               target="_blank"
+                               style="background-color: #25d366; border-color: #25d366;">
+                                <i class="fab fa-whatsapp me-2"></i>
+                                Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-4">Klinik Subha</h4>
+                    <p class="mb-4">Providing comprehensive healthcare services with a commitment to excellence and patient-centered care since 1990.</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://wa.me/60162235212"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-4">Quick Links</h4>
+                    <a class="btn btn-link text-light" href="index.html">Home</a>
+                    <a class="btn btn-link text-light" href="about.html">About Us</a>
+                    <a class="btn btn-link text-light" href="service.html">Services</a>
+                    <a class="btn btn-link text-light" href="index.html#book-section">Book Appointment</a>
+                    <a class="btn btn-link text-light" href="testimonial.html">Testimonials</a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-4">Contact Info</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Beaufort Square Avenue 2, Beaufort Square, 89800 Beaufort, Sabah</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+016-2235212</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@kliniksubha.com</p>
+                    <div class="d-flex justify-content-start mt-4">
+                        <a class="btn btn-primary rounded-circle text-center me-3" href="https://wa.me/60162235212?text=Hi%20Klinik%20Subha!%20I%20would%20like%20to%20make%20an%20appointment." style="width: 40px; height: 40px;"><i class="fab fa-whatsapp my-auto"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="index.html">Klinik Subha</a>, All Right Reserved. 
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Privacy Policy</a>
+                            <a href="">Terms & Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+
+
+    <!-- Custom Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/carousel.js"></script>
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="js/appointment.js"></script>
+
+    <!-- Add this just before the closing </body> tag -->
+    <script>
+        // Debug logging
+        console.log('Page loaded');
+        window.addEventListener('error', function(e) {
+            console.error('Global error:', e.error);
+        });
+
+        // Contact Form Handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('contactName');
+            const email = formData.get('contactEmail');
+            const phone = formData.get('contactPhone');
+            const subject = formData.get('contactSubject');
+            const message = formData.get('contactMessage');
+            
+            // Create email content
+            const emailBody = `
+Name: ${name}
+Email: ${email}
+Phone: ${phone || 'Not provided'}
+Subject: ${subject}
+
+Message:
+${message}
+
+---
+This message was sent from the Klinik Subha website contact form.
+            `;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:admin@kliniksubha.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            alert('Thank you! Your email client will open with your message. Please send the email to complete your request.');
+        });
+    </script>
+
+    <!-- Add this just before the closing </body> tag -->
+    <a href="https://wa.me/60162235212?text=Hi%20Klinik%20Subha!" 
+       class="whatsapp-float" 
+       target="_blank"
+       aria-label="Chat with us on WhatsApp">
+        <div class="pulse"></div>
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Add these elements just after the body tag -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <!-- Add this JavaScript before closing body tag -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.querySelector('.custom-cursor');
+            const cursorDot = document.querySelector('.custom-cursor-dot');
+
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                
+                cursorDot.style.left = e.clientX + 'px';
+                cursorDot.style.top = e.clientY + 'px';
+            });
+
+            // Scale up on clickable elements
+            document.querySelectorAll('a, button, input, textarea').forEach(elem => {
+                elem.addEventListener('mouseenter', () => {
+                    cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                    cursorDot.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                });
+                
+                elem.addEventListener('mouseleave', () => {
+                    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                    cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
+                });
+            });
+        });
+    </script>
+
+    <!-- Add this before closing body tag -->
+    <script src="js/translations.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="js/auth.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Function to open video modal
+            function openVideoModal() {
+                var modal = new bootstrap.Modal(document.getElementById('videoModal'));
+                modal.show();
+                
+                // For YouTube iframe, we don't need to manually play it
+                // The iframe will handle playback automatically
+            }
+            
+            // Handle modal close to reset video
+            document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
+                // For YouTube iframe, we can reload the iframe to stop the video
+                var modalVideo = document.getElementById('modalVideo');
+                var currentSrc = modalVideo.src;
+                modalVideo.src = '';
+                modalVideo.src = currentSrc;
+            });
+
+            // Make openVideoModal function globally available
+            window.openVideoModal = openVideoModal;
+            // Initialize Service Carousel
+            var $serviceCarousel = $('.service-carousel').owlCarousel({
+                loop: true,
+                margin: 0,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                nav: false,
+                dots: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        margin: 0,
+                        dots: true,
+                        stagePadding: 0
+                    },
+                    576: {
+                        items: 2,
+                        margin: 15,
+                        dots: false,
+                        stagePadding: 0
+                    },
+                    768: {
+                        items: 3,
+                        margin: 20,
+                        dots: false,
+                        stagePadding: 0
+                    },
+                    992: {
+                        items: 4,
+                        margin: 20,
+                        dots: false,
+                        stagePadding: 0
+                    }
+                }
+            });
+
+            // Custom navigation buttons
+            $('#service-prev').click(function() {
+                $serviceCarousel.trigger('prev.owl.carousel');
+            });
+            $('#service-next').click(function() {
+                $serviceCarousel.trigger('next.owl.carousel');
+            });
+
+            // Smooth scroll for Book Now button
+            $('a[href="#book-section"]').on('click', function(e) {
+                e.preventDefault();
+                const target = document.getElementById('book-section');
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+
+            // Prevent booking for past dates in appointment form
+            const dateInput = document.getElementById('preferredDate');
+            if (dateInput) {
+                // Set min attribute to today
+                const today = new Date();
+                const todayStr = today.toISOString().split('T')[0];
+                dateInput.setAttribute('min', todayStr);
+                
+                // Initial validation when page loads
+                if (dateInput.value) {
+                    const selectedDate = new Date(dateInput.value);
+                    today.setHours(0,0,0,0);
+                    if (selectedDate < today) {
+                        alert('You cannot book an appointment for a past date.');
+                        dateInput.value = todayStr; // Reset to today
+                    }
+                }
+                
+                // Validation when date changes
+                dateInput.addEventListener('change', function() {
+                    const selectedDate = new Date(this.value);
+                    const today = new Date();
+                    today.setHours(0,0,0,0);
+                    if (selectedDate < today) {
+                        alert('You cannot book an appointment for a past date.');
+                        this.value = ''; // Clear the field
+                    }
+                });
+                
+                // Also validate on input to catch direct typing
+                dateInput.addEventListener('input', function() {
+                    if (this.value) {
+                        const selectedDate = new Date(this.value);
+                        const today = new Date();
+                        today.setHours(0,0,0,0);
+                        if (selectedDate < today) {
+                            alert('You cannot book an appointment for a past date.');
+                            this.value = ''; // Clear the field
+                        }
+                    }
+                });
+            }
+            
+            // Prevent form submission if date is before today
+            const appointmentForm = document.getElementById('appointmentForm');
+            if (appointmentForm && dateInput) {
+                appointmentForm.addEventListener('submit', function(e) {
+                    if (dateInput.value) {
+                        const selectedDate = new Date(dateInput.value);
+                        const today = new Date();
+                        today.setHours(0,0,0,0);
+                        if (selectedDate < today) {
+                            e.preventDefault();
+                            alert('You cannot book an appointment for a past date.');
+                            dateInput.value = ''; // Clear the field
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Klinik - Clinic Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #2CC295;    /* Mountain Meadow Green */
+            --primary-light: #00DF81;  /* Caribbean Green - lighter shade */
+            --primary-dark: #03624C;   /* Bangladesh Green - darker shade */
+        }
+
+        .bg-primary {
+            background-color: var(--primary) !important;
+        }
+        
+        /* Remove hyperlink color from service card text */
+        .service-card-link {
+            color: inherit !important;
+            text-decoration: none !important;
+        }
+        
+        .service-card-link .card-title {
+            color: #212529 !important; /* Dark grey for titles */
+        }
+        
+        .service-card-link .card-text {
+            color: #6c757d !important; /* Bootstrap grey-600 for descriptions */
+        }
+        
+        .service-card-link:hover {
+            color: inherit !important;
+            text-decoration: none !important;
+        }
+        
+        .service-card-link:hover .card-title {
+            color: #212529 !important;
+        }
+        
+        .service-card-link:hover .card-text {
+            color: #6c757d !important;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        .text-primary {
+            color: var(--primary) !important;
+        }
+
+        .border-primary {
+            border-color: var(--primary) !important;
+        }
+
+        /* For any gradient backgrounds */
+        .bg-primary-gradient {
+            background: linear-gradient(to bottom, rgba(44, 194, 149, 0.9), rgba(44, 194, 149, 0.6)) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <div class="navbar-nav d-none d-lg-flex align-items-center gap-3 ms-auto">
+            <a href="index.html" class="nav-item nav-link" data-translate="nav-home" style="font-size: 0.9rem;">Home</a>
+            <a href="about.html" class="nav-item nav-link" data-translate="nav-about" style="font-size: 0.9rem;">About</a>
+            <a href="service.html" class="nav-item nav-link active" data-translate="nav-service" style="font-size: 0.9rem;">Service</a>
+            <a href="index.html#book-section" class="btn" style="min-width: 80px; font-size: 0.9rem; padding: 0.5rem 0.75rem; text-align: center; line-height: 1.2; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: var(--primary); border-color: var(--primary); color: white;">
+                <div style="font-size: 0.8rem;">BOOK AN</div>
+                <div style="font-size: 0.8rem;">APPOINTMENT</div>
+            </a>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="d-lg-none">
+            <!-- Mobile Menu Button -->
+            <button class="btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 8px; padding: 8px 12px; min-width: 50px;">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <!-- Mobile Dropdown Menu -->
+            <ul class="dropdown-menu dropdown-menu-end" style="background: rgba(44, 194, 149, 0.95); backdrop-filter: blur(10px); border: none; border-radius: 12px; padding: 15px; min-width: 180px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); margin-top: 10px;">
+                <li><a class="dropdown-item text-white text-center" href="index.html" style="font-size: 1rem; padding: 10px; border-radius: 8px; transition: all 0.3s ease;">Home</a></li>
+                <li><a class="dropdown-item text-white text-center" href="about.html" style="font-size: 1rem; padding: 10px; border-radius: 8px; transition: all 0.3s ease;">About</a></li>
+                <li><a class="dropdown-item text-white text-center" href="service.html" style="font-size: 1rem; padding: 10px; border-radius: 8px; transition: all 0.3s ease;">Service</a></li>
+                <li><hr class="dropdown-divider" style="border-color: rgba(255, 255, 255, 0.3); margin: 10px 0;"></li>
+                <li><a class="dropdown-item text-center" href="index.html#book-section" style="background: var(--primary); color: white; font-size: 0.9rem; padding: 12px; border-radius: 8px; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <div style="font-size: 0.8rem;">BOOK AN</div>
+                    <div style="font-size: 0.8rem;">APPOINTMENT</div>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="position: relative; height: 400px; overflow: hidden;">
+        <video autoplay muted loop playsinline class="w-100 h-100" style="position: absolute; top: 0; left: 0; object-fit: cover; z-index: -1;">
+            <source src="video/homepage.mp4" type="video/mp4">
+            <img src="img/carousel-1.jpg" alt="Fallback image" class="w-100 h-100" style="object-fit: cover;">
+        </video>
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.4); z-index: 1;"></div>
+        <div class="container py-5 text-center position-relative" style="z-index: 2;">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Our Services</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb text-uppercase mb-0 justify-content-center">
+                    <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Services</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Our Services</p>
+                <h1>Comprehensive Healthcare Solutions</h1>
+                <p class="text-muted">Discover our wide range of medical services designed to meet all your healthcare needs</p>
+            </div>
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <a href="services/service1.html" class="text-decoration-none service-card-link">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="img/services/services/service1.jpg" class="card-img-top" alt="Student Health Screening IPTA IPTS">
+                            <div class="card-body">
+                                <h5 class="card-title">Student Health Screening (IPTA/IPTS)</h5>
+                                <p class="card-text">Starting your journey in higher education? Our Student Health Screening package is designed to meet the medical requirements for entry into local public (IPTA) and private (IPTS) institutions.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Service 2 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.15s">
+                            <a href="services/service2.html" class="text-decoration-none service-card-link">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="img/services/services/service2.jpg" class="card-img-top" alt="Student Health Screening School">
+                            <div class="card-body">
+                                <h5 class="card-title">Student Health Screening (School)</h5>
+                                <p class="card-text">Ensure your child is healthy and ready for their academic year with our basic Student Health Screening. This package is ideal for school-going students.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Service 3 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                            <a href="services/service3.html" class="text-decoration-none service-card-link">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="img/services/services/service3.jpg" class="card-img-top" alt="GDL PSV Health Screening New Application">
+                            <div class="card-body">
+                                <h5 class="card-title">GDL / PSV Health Screening (New Application)</h5>
+                                <p class="card-text">Applying for a new Goods Driving License (GDL) or Public Service Vehicle (PSV) license? Our screening package covers all the necessary medical checks required by JPJ.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Service 4 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.25s">
+                            <a href="services/service4.html" class="text-decoration-none service-card-link">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="img/services/services/service4.jpg" class="card-img-top" alt="Full Deluxe Health Screening Men">
+                            <div class="card-body">
+                                <h5 class="card-title">Full Deluxe Health Screening (Men)</h5>
+                                <p class="card-text">Take a proactive approach to your health with our Full Deluxe screening for men, highly recommended for those aged 40 and above. Includes cancer markers.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Service 5 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <a href="services/service5.html" class="text-decoration-none service-card-link">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="img/services/services/service5.jpg" class="card-img-top" alt="Standard Health Screening Most Popular">
+                            <div class="card-body">
+                                <h5 class="card-title">Standard Health Screening (Most Popular)</h5>
+                                <p class="card-text">Our most popular package offers a comprehensive overview of your health. Perfect for an annual check-up, helping you monitor vital health indicators.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Service 6 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.35s">
+                            <a href="services/service6.html" class="text-decoration-none service-card-link">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="img/services/services/service6.jpg" class="card-img-top" alt="Basic Pre-Employment Health Screening">
+                            <div class="card-body">
+                                <h5 class="card-title">Basic Pre-Employment Health Screening</h5>
+                                <p class="card-text">Starting a new job? Our Basic Pre-Employment screening covers the essential health checks required by most employers.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Service 7 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                            <a href="services/service7.html" class="text-decoration-none service-card-link">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="img/services/services/service7.jpg" class="card-img-top" alt="Full Deluxe Health Screening Women">
+                            <div class="card-body">
+                                <h5 class="card-title">Full Deluxe Health Screening (Women)</h5>
+                                <p class="card-text">Designed specifically for women, our Full Deluxe screening offers a deep dive into your health. Recommended for women aged 40 and up.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Service 8 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.45s">
+                            <a href="services/service8.html" class="text-decoration-none service-card-link">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="img/services/services/service8.jpg" class="card-img-top" alt="GDL PSV Health Screening License Renewal">
+                            <div class="card-body">
+                                <h5 class="card-title">GDL / PSV Health Screening (License Renewal)</h5>
+                                <p class="card-text">Time to renew your GDL or PSV license? Our health screening package is tailored for a fast and hassle-free renewal process.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Service 9 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                            <a href="services/service9.html" class="text-decoration-none service-card-link">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="img/services/services/service9.jpg" class="card-img-top" alt="Basic Health Screening Most Popular">
+                            <div class="card-body">
+                                <h5 class="card-title">Basic Health Screening (Most Popular)</h5>
+                                <p class="card-text">Looking for a great starting point to check on your health? Our popular Basic Health Screening provides essential insights by checking your blood and sugar levels.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Service 10 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.55s">
+                            <a href="services/service10.html" class="text-decoration-none service-card-link">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="img/services/services/service10.jpg" class="card-img-top" alt="Comprehensive Pre-Employment Health Screening">
+                            <div class="card-body">
+                                <h5 class="card-title">Comprehensive Pre-Employment Health Screening</h5>
+                                <p class="card-text">For job roles requiring a more detailed medical evaluation, our Comprehensive Pre-Employment package is the perfect fit.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Service 11 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                            <a href="services/service11.html" class="text-decoration-none service-card-link">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="img/services/services/service11.jpg" class="card-img-top" alt="Gardasil 9 Vaccine HPV Prevention">
+                            <div class="card-body">
+                                <h5 class="card-title">Gardasil 9 Vaccine (HPV Prevention)</h5>
+                                <p class="card-text">Protect yourself from the Human Papillomavirus (HPV), the leading cause of cervical cancer. Highly recommended for girls and women.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Service 12 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.65s">
+                            <a href="services/service12.html" class="text-decoration-none service-card-link">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="img/services/services/service12.jpg" class="card-img-top" alt="Meningococcal Vaccine Haji Umrah">
+                            <div class="card-body">
+                                <h5 class="card-title">Meningococcal Vaccine (Haji & Umrah)</h5>
+                                <p class="card-text">Performing your pilgrimage soon? The Meningococcal vaccine is a mandatory requirement for all Haji and Umrah pilgrims.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Service 13 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                            <a href="services/service13.html" class="text-decoration-none service-card-link">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="img/services/services/service13.jpg" class="card-img-top" alt="Typhoid Vaccine For Food Handlers">
+                            <div class="card-body">
+                                <h5 class="card-title">Typhoid Vaccine (For Food Handlers)</h5>
+                                <p class="card-text">As a food handler, your health is crucial for public safety. This Typhoid vaccine is a mandatory requirement by the Ministry of Health Malaysia.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Service 14 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.75s">
+                            <a href="services/service14.html" class="text-decoration-none service-card-link">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="img/services/services/service14.jpg" class="card-img-top" alt="Influenza Flu Vaccine">
+                            <div class="card-body">
+                                <h5 class="card-title">Influenza (Flu) Vaccine</h5>
+                                <p class="card-text">The annual flu vaccine is your most effective defense against the influenza virus. Especially important for high-risk groups.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Service 15 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
+                            <a href="services/service15.html" class="text-decoration-none service-card-link">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="img/services/services/service15.jpg" class="card-img-top" alt="Pneumococcal Vaccine Synflorix">
+                            <div class="card-body">
+                                <h5 class="card-title">Pneumococcal Vaccine (Synflorix)</h5>
+                                <p class="card-text">Protect your little ones from severe pneumococcal infections with the Synflorix vaccine. Helps prevent pneumonia and meningitis.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Service 16 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.85s">
+                            <a href="services/service16.html" class="text-decoration-none service-card-link">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="img/services/services/service16.jpg" class="card-img-top" alt="Rotavirus Vaccine">
+                            <div class="card-body">
+                                <h5 class="card-title">Rotavirus Vaccine</h5>
+                                <p class="card-text">Rotavirus is a primary cause of severe gastroenteritis in infants and young children. Protect your child with this safe and effective vaccine.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Service 17 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.9s">
+                            <a href="services/service17.html" class="text-decoration-none service-card-link">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="img/services/services/service17.jpg" class="card-img-top" alt="Implanon Insertion Family Planning">
+                            <div class="card-body">
+                                <h5 class="card-title">Implanon Insertion (Family Planning)</h5>
+                                <p class="card-text">Looking for a reliable, long-term family planning solution? Implanon provides continuous protection for up to three years with 99%+ effectiveness.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- Why Choose Us Start -->
+    <div class="container-fluid bg-primary overflow-hidden my-5 px-lg-0">
+        <div class="container feature px-lg-0">
+            <div class="row g-0 mx-lg-0 justify-content-start">
+                <div class="col-lg-8 offset-lg-1 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="p-lg-5 text-center">
+                        <div class="bg-white rounded-5 p-4 p-md-5 shadow-lg" style="border-radius: 25px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);">
+                            <div class="text-center mb-3">
+                                <p class="d-inline-block border rounded-pill py-1 px-3 px-md-4" style="font-size: clamp(0.8rem, 2.5vw, 1.05rem); background-color: #2CC295; border-color: #2CC295 !important; color: white;">Features</p>
+                            </div>
+                            <h1 class="text-dark mb-3 mb-md-4 text-center" style="font-size: clamp(1.8rem, 5vw, 2.8rem);">Why Choose Us</h1>
+                            <p class="text-dark mb-3 mb-md-4 pb-2" style="font-size: clamp(0.9rem, 2.8vw, 1.15rem); line-height: 1.6;">At Klinik Subha, we provide affordable, high-quality, family-centered care delivered by skilled medical officers and physiotherapists. Equipped with advanced diagnostic tools, our clinic ensures precise, efficient care. Conveniently located at Beaufort Square and open daily, we are committed to making healthcare accessible for everyone. Your family's health is our priority.</p>
+                            <div class="row g-3 g-md-4 justify-content-center">
+                                <div class="col-6 col-md-3">
+                                    <div class="d-flex flex-column align-items-center text-center">
+                                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light mb-2 mb-md-3" style="width: clamp(45px, 12vw, 60px); height: clamp(45px, 12vw, 60px);">
+                                            <i class="fa fa-user-md text-primary fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-dark mb-1 mb-md-2" style="font-size: clamp(0.8rem, 2.2vw, 1rem);">Experience</p>
+                                            <h5 class="text-dark mb-0" style="font-size: clamp(0.9rem, 2.5vw, 1.1rem);">Doctors</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="d-flex flex-column align-items-center text-center">
+                                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light mb-2 mb-md-3" style="width: clamp(45px, 12vw, 60px); height: clamp(45px, 12vw, 60px);">
+                                            <i class="fa fa-check text-primary fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-dark mb-1 mb-md-2" style="font-size: clamp(0.8rem, 2.2vw, 1rem);">Quality</p>
+                                            <h5 class="text-dark mb-0" style="font-size: clamp(0.9rem, 2.5vw, 1.1rem);">Services</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="d-flex flex-column align-items-center text-center">
+                                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light mb-2 mb-md-3" style="width: clamp(45px, 12vw, 60px); height: clamp(45px, 12vw, 60px);">
+                                            <i class="fa fa-comment-medical text-primary fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-dark mb-1 mb-md-2" style="font-size: clamp(0.8rem, 2.2vw, 1rem);">Positive</p>
+                                            <h5 class="text-dark mb-0" style="font-size: clamp(0.9rem, 2.5vw, 1.1rem);">Consultation</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="d-flex flex-column align-items-center text-center">
+                                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light mb-2 mb-md-3" style="width: clamp(45px, 12vw, 60px); height: clamp(45px, 12vw, 60px);">
+                                            <i class="fa fa-headphones text-primary fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-dark mb-1 mb-md-2" style="font-size: clamp(0.8rem, 2.2vw, 1rem);">Daily</p>
+                                            <h5 class="mb-0" style="font-size: clamp(0.9rem, 2.5vw, 1.1rem);">Support</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Why Choose Us End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Testimonial</p>
+                <h1>What Our Patients Say</h1>
+            </div>
+            
+            <!-- Google Reviews Widget -->
+            <div class="row justify-content-center">
+                <div class="col-lg-10 wow fadeInUp" data-wow-delay="0.3s">
+                    <!-- Embedded Google Reviews Widget (Elfsight) -->
+                    <div class="google-reviews-container mb-4" style="min-height: 200px;"> 
+                        <div id="google-reviews">
+                            <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+                            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+                            <div class="elfsight-app-d97b0a54-41c6-4c86-ab01-b8f6c71d9f03" data-elfsight-app-lazy></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Write a Review Button -->
+                    <div class="text-center mt-4">
+                        <a href="https://search.google.com/local/writereview?placeid=ChIJOSum2cXNPDIR7ehuvVzEY2U" target="_blank" class="btn btn-primary py-3 px-5">
+                            <i class="fab fa-google me-2"></i>Write a Google Review
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+    <!-- Location Map Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Location</p>
+                <h1>Find Us Here</h1>
+                <p class="text-muted">Visit us at our convenient location in Beaufort Square</p>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="position-relative rounded overflow-hidden h-100" style="min-height: 400px;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.5!2d115.7436!3d5.3473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x323a1b8b8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sBeaufort%20Square%2C%20Beaufort%2C%20Sabah!5e0!3m2!1sen!2smy!4v1234567890123!5m2!1sen!2smy" 
+                                width="100%" 
+                                height="400" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="bg-light rounded p-5 h-100">
+                        <h3 class="mb-4">Visit Our Clinic</h3>
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-primary" style="width: 50px; height: 50px;">
+                                <i class="fa fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="mb-1">Address</h5>
+                                <p class="mb-0">Beaufort Square Avenue 2<br>Beaufort Square<br>89800 Beaufort, Sabah</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-primary" style="width: 50px; height: 50px;">
+                                <i class="fa fa-clock text-white"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="mb-1">Operating Hours</h5>
+                                <p class="mb-0">Monday - Sunday<br>8:00 AM - 9:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-primary" style="width: 50px; height: 50px;">
+                                <i class="fa fa-phone-alt text-white"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="mb-1">Phone</h5>
+                                <p class="mb-0">+016-2235212</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <a href="https://maps.google.com/?q=Beaufort+Square+Avenue+2,+Beaufort+Square,+89800+Beaufort,+Sabah" 
+                               target="_blank" 
+                               class="btn btn-primary w-100 py-3">
+                                <i class="fa fa-directions me-2"></i>
+                                Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Location Map End -->
+
+    <!-- WhatsApp CTA Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="d-inline-block border rounded-pill py-1 px-4">Book Appointment</p>
+                    <h1 class="mb-4">Ready to Book Your Appointment?</h1>
+                    <p class="mb-4">For quick appointments, inquiries, or urgent medical needs, chat with us directly on WhatsApp! Our team is available to assist you with scheduling and answer any questions you may have.</p>
+                    
+                    <div class="bg-light rounded p-5 mb-4">
+                        <h3 class="mb-4">Why Choose WhatsApp?</h3>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="text-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-primary mx-auto mb-3" style="width: 60px; height: 60px;">
+                                        <i class="fa fa-clock text-white fa-lg"></i>
+                                    </div>
+                                    <h5>Quick Response</h5>
+                                    <p class="mb-0">Get immediate assistance and appointment scheduling</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-primary mx-auto mb-3" style="width: 60px; height: 60px;">
+                                        <i class="fa fa-mobile-alt text-white fa-lg"></i>
+                                    </div>
+                                    <h5>Easy & Convenient</h5>
+                                    <p class="mb-0">Book appointments directly from your phone</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-primary mx-auto mb-3" style="width: 60px; height: 60px;">
+                                        <i class="fa fa-headset text-white fa-lg"></i>
+                                    </div>
+                                    <h5>Daily Support</h5>
+                                    <p class="mb-0">Available 8AM - 9PM for medical inquiries</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/60162235212?text=Hi%20Klinik%20Subha!%20I%20would%20like%20to%20make%20an%20appointment%20or%20ask%20about%20your%20services." 
+                       class="btn btn-success py-4 px-5" 
+                       target="_blank"
+                       style="background-color: #25d366; border-color: #25d366; font-size: 1.3rem; font-weight: 600;">
+                        <i class="fab fa-whatsapp me-3" style="font-size: 1.5rem;"></i>
+                        Chat on WhatsApp Now
+                    </a>
+                    
+                    <div class="mt-4">
+                        <p class="text-muted mb-2">Or call us directly:</p>
+                        <a href="tel:+016-2235212" class="btn btn-outline-primary py-2 px-4">
+                            <i class="fa fa-phone-alt me-2"></i>
+                            +016-2235212
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- WhatsApp CTA End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-4">Klinik Subha</h4>
+                    <p class="mb-4">Providing comprehensive healthcare services with a commitment to excellence and patient-centered care since 1990.</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://wa.me/60162235212"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-4">Quick Links</h4>
+                    <a class="btn btn-link text-light" href="index.html">Home</a>
+                    <a class="btn btn-link text-light" href="about.html">About Us</a>
+                    <a class="btn btn-link text-light" href="service.html">Services</a>
+                    <a class="btn btn-link text-light" href="index.html#book-section">Book Appointment</a>
+                    <a class="btn btn-link text-light" href="testimonial.html">Testimonials</a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-4">Contact Info</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Beaufort Square Avenue 2, Beaufort Square, 89800 Beaufort, Sabah</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+016-2235212</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@kliniksubha.com</p>
+                    <div class="d-flex justify-content-start mt-4">
+                        <a class="btn btn-primary rounded-circle text-center me-3" href="https://wa.me/60162235212?text=Hi%20Klinik%20Subha!%20I%20would%20like%20to%20make%20an%20appointment." style="width: 40px; height: 40px;"><i class="fab fa-whatsapp my-auto"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="index.html">Klinik Subha</a>, All Right Reserved. 
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Privacy Policy</a>
+                            <a href="">Terms & Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Add this just before the closing </body> tag -->
+    <script>
+        $(document).ready(function() {
+            // Prevent booking for past dates in appointment form
+            const dateInput = document.getElementById('preferredDate');
+            if (dateInput) {
+                // Set min attribute to today
+                const today = new Date();
+                const todayStr = today.toISOString().split('T')[0];
+                dateInput.setAttribute('min', todayStr);
+                
+                // Initial validation when page loads
+                if (dateInput.value) {
+                    const selectedDate = new Date(dateInput.value);
+                    today.setHours(0,0,0,0);
+                    if (selectedDate < today) {
+                        alert('You cannot book an appointment for a past date.');
+                        dateInput.value = todayStr; // Reset to today
+                    }
+                }
+                
+                // Validation when date changes
+                dateInput.addEventListener('change', function() {
+                    const selectedDate = new Date(this.value);
+                    const today = new Date();
+                    today.setHours(0,0,0,0);
+                    if (selectedDate < today) {
+                        alert('You cannot book an appointment for a past date.');
+                        this.value = ''; // Clear the field
+                    }
+                });
+                
+                // Also validate on input to catch direct typing
+                dateInput.addEventListener('input', function() {
+                    if (this.value) {
+                        const selectedDate = new Date(this.value);
+                        const today = new Date();
+                        today.setHours(0,0,0,0);
+                        if (selectedDate < today) {
+                            alert('You cannot book an appointment for a past date.');
+                            this.value = ''; // Clear the field
+                        }
+                    }
+                });
+            }
+            
+            // Prevent form submission if date is before today
+            const appointmentForm = document.getElementById('appointmentForm');
+            if (appointmentForm && dateInput) {
+                appointmentForm.addEventListener('submit', function(e) {
+                    if (dateInput.value) {
+                        const selectedDate = new Date(dateInput.value);
+                        const today = new Date();
+                        today.setHours(0,0,0,0);
+                        if (selectedDate < today) {
+                            e.preventDefault();
+                            alert('You cannot book an appointment for a past date.');
+                            dateInput.value = ''; // Clear the field
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
