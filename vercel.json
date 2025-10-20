@@ -4,6 +4,14 @@
   "devCommand": "python -m http.server 3000",
   "installCommand": "echo 'No dependencies to install'",
   "framework": null,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/home", "destination": "/index.html" },
+    { "source": "/homepage", "destination": "/index.html" },
+    { "source": "/services", "destination": "/service.html" },
+    { "source": "/about", "destination": "/about.html" }
+  ],
   "headers": [
     {
       "source": "/video/(.*)",
